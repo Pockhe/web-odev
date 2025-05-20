@@ -1,0 +1,102 @@
+.home-page {
+  text-align: center;
+  margin-bottom: 120px;
+}
+.subtitle {
+  color: #7ed957;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.phone-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0 3rem 0;
+  flex-wrap: wrap;
+}
+.phone-img {
+  width: 120px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  background: #232526;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.phone-img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 32px #7ed95755;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.feature-card {
+  background: #232526;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  padding: 2rem 2.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(126,217,87,0.15);
+}
+.feature-card h3 {
+  color: #7ed957;
+  margin-bottom: 0.7rem;
+}
+.light-theme .feature-card {
+  background: #f5f5f5;
+  color: #232526;
+}
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+.main-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #7ed957;
+}
+.main-buttons {
+  display: flex;
+  gap: 2.5rem;
+}
+.main-btn {
+  background: linear-gradient(90deg, #7ed957 0%, #232526 100%);
+  color: #181A1B;
+  border: none;
+  padding: 2rem 3.5rem;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+.main-btn:hover {
+  background: linear-gradient(90deg, #232526 0%, #7ed957 100%);
+  color: #fff;
+  transform: scale(1.05);
+}
+@media (max-width: 700px) {
+  .main-buttons {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .main-btn {
+    width: 90vw;
+    padding: 1.5rem 0;
+    font-size: 1.2rem;
+  }
+} 

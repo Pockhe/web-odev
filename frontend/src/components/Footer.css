@@ -1,0 +1,22 @@
+.footer {
+  width: 100%;
+  background: var(--footer-bg, #232526);
+  color: var(--footer-color, #bdbdbd);
+  text-align: center;
+  padding: 1.5rem 0 1rem 0;
+  font-size: 1rem;
+  border-top: 1px solid #333;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.light-theme .footer {
+  background: #f5f5f5;
+  color: #232526;
+  border-top: 1px solid #ccc;
+} 

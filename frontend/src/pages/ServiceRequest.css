@@ -1,0 +1,92 @@
+.service-request {
+  max-width: 520px;
+  margin: 0 auto 120px auto;
+  background: var(--form-bg, #232526);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+.request-form .form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.request-form input,
+.request-form textarea {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1.5px solid #444;
+  background: #181A1B;
+  color: #F5F6FA;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+.request-form input:focus,
+.request-form textarea:focus {
+  border: 1.5px solid #7ed957;
+  outline: none;
+}
+.brand-row, .model-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.brand-btn, .model-btn {
+  background: #232526;
+  color: #7ed957;
+  border: 2px solid #7ed957;
+  border-radius: 18px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.brand-btn.selected, .model-btn.selected {
+  background: #7ed957;
+  color: #232526;
+  border: 2px solid #232526;
+}
+.brand-btn:hover, .model-btn:hover {
+  background: #7ed957;
+  color: #232526;
+}
+.request-form button[type="submit"] {
+  width: 100%;
+  background: linear-gradient(90deg, #7ed957 0%, #232526 100%);
+  color: #181A1B;
+  border: none;
+  padding: 0.9rem 0;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+.request-form button[type="submit"]:hover {
+  background: linear-gradient(90deg, #232526 0%, #7ed957 100%);
+  color: #fff;
+  transform: scale(1.03);
+}
+.success-msg {
+  background: #7ed957;
+  color: #232526;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.light-theme .service-request {
+  background: #f5f5f5;
+  color: #232526;
+}
+.light-theme .request-form input,
+.light-theme .request-form textarea {
+  background: #fff;
+  color: #232526;
+  border: 1.5px solid #bbb;
+} 

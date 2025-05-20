@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servis Durumu - Telefon Teknik Servisi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .status-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .status-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #dee2e6;
+        }
+        .status-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .status-item.active .status-dot {
+            background: #0d6efd;
+            border-color: #0d6efd;
+        }
+        .status-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #dee2e6;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Telefon Teknik Servisi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Hizmetlerimiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/service/track">Servis Takip</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Servis Durumu</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <h5>Müşteri Bilgileri</h5>
+                                <p><strong>Ad Soyad:</strong> <span th:text="${serviceRequest.customerName}"></span></p>
+                                <p><strong>Telefon:</strong> <span th:text="${serviceRequest.phoneNumber}"></span></p>
+                                <p><strong>Cihaz Modeli:</strong> <span th:text="${serviceRequest.deviceModel}"></span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Servis Bilgileri</h5>
+                                <p><strong>Servis No:</strong> <span th:text="${serviceRequest.id}"></span></p>
+                                <p><strong>Alınma Tarihi:</strong> <span th:text="${#temporals.format(serviceRequest.createdAt, 'dd/MM/yyyy HH:mm')}"></span></p>
+                                <p><strong>Son Güncelleme:</strong> <span th:text="${#temporals.format(serviceRequest.updatedAt, 'dd/MM/yyyy HH:mm')}"></span></p>
+                            </div>
+                        </div>
+
+                        <h5 class="mb-3">Arıza Açıklaması</h5>
+                        <p th:text="${serviceRequest.problemDescription}" class="mb-4"></p>
+
+                        <h5 class="mb-3">Servis Durumu</h5>
+                        <div class="status-timeline">
+                            <div th:each="status : ${T(com.phoneservice.model.ServiceStatus).values()}" 
+                                 class="status-item" 
+                                 th:classappend="${status == serviceRequest.status ? 'active' : ''}">
+                                <div class="status-dot"></div>
+                                <div class="row">
+                                    <div class="col-md-6 text-end">
+                                        <p th:text="${status.displayName}" class="mb-0"></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p th:if="${status == serviceRequest.status}" class="text-primary mb-0">Aktif Durum</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Telefon Teknik Servisi. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

@@ -1,0 +1,103 @@
+body, .App {
+  background: #181A1B;
+  color: #F5F6FA;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.dark-theme {
+  background: #181A1B;
+  color: #F5F6FA;
+}
+
+.header {
+  background: linear-gradient(90deg, #232526 0%, #414345 100%);
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.logo {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.subtitle {
+  color: #7ed957;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0 1rem 0;
+}
+.menu button {
+  background: linear-gradient(90deg, #7ed957 0%, #232526 100%);
+  color: #181A1B;
+  border: none;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.menu button:hover {
+  background: linear-gradient(90deg, #232526 0%, #7ed957 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+}
+.main-content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.feature-card {
+  background: #232526;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  padding: 2rem 2.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(126,217,87,0.15);
+}
+.feature-card h3 {
+  color: #7ed957;
+  margin-bottom: 0.7rem;
+}
+.footer {
+  background: #232526;
+  color: #bdbdbd;
+  text-align: center;
+  padding: 1.5rem 0 1rem 0;
+  font-size: 1rem;
+  border-top: 1px solid #333;
+}
+@media (max-width: 900px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}

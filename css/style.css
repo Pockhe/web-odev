@@ -1,0 +1,29 @@
+/* Basit stil dosyası */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+p {
+    color: black;
+    font-size: 16px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+} 

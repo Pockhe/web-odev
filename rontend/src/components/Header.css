@@ -1,0 +1,60 @@
+.user-menu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.user-name-btn {
+  background: #232526;
+  color: #7ed957;
+  border: 2px solid #7ed957;
+  border-radius: 18px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+}
+.user-name-btn.green {
+  color: #7ed957 !important;
+  border-color: #7ed957 !important;
+  background: #232526;
+}
+.user-name-btn:hover {
+  background: #7ed957;
+  color: #232526 !important;
+  border: 2px solid #232526;
+}
+.user-menu {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: #232526;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  min-width: 140px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  animation: fadeInMenu 0.18s;
+}
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.user-menu button {
+  background: none;
+  border: none;
+  color: #7ed957;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.7rem 1.2rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.user-menu button:hover {
+  background: #7ed957;
+  color: #232526;
+} 

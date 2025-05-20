@@ -1,0 +1,131 @@
+.header {
+  width: 100%;
+  background: #181A1B;
+  padding: 0.7rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.header-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #232526;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #7ed957;
+  letter-spacing: 1px;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: #7ed957;
+  transition: color 0.2s;
+}
+.theme-toggle:hover {
+  color: #fff;
+}
+.user-icon {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: #7ed957;
+  transition: color 0.2s;
+  margin-left: 0.2rem;
+}
+.user-icon:hover {
+  color: #fff;
+}
+.user-menu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.user-name-btn {
+  background: #232526;
+  color: #7ed957;
+  border: 2px solid #7ed957;
+  border-radius: 18px;
+  padding: 0.7rem 1.7rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 0.7rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+  min-width: 120px;
+}
+.user-name-btn.green {
+  color: #7ed957 !important;
+  border-color: #7ed957 !important;
+  background: #232526;
+}
+.user-name-btn:hover {
+  background: #7ed957;
+  color: #232526 !important;
+  border: 2px solid #232526;
+}
+.user-menu {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: #232526;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  min-width: 180px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem 0;
+  animation: fadeInMenu 0.18s;
+}
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.user-menu button {
+  background: none;
+  border: none;
+  color: #7ed957;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+}
+.user-menu button:hover {
+  background: #7ed957;
+  color: #232526;
+}
+.user-name {
+  color: #fff;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+} 
