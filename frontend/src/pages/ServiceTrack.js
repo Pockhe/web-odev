@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ServiceTrack.css';
 
-const API_URL = 'http://localhost:3001/servis-api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/servis-api';
 
 const steps = [
   'Teslim Alındı',
