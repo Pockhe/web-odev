@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AuthPage.css';
 
-const API_URL = 'http://localhost:3001/users';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/users';
 
 const AuthPage = ({ onClose, onLogin }) => {
   const [isLogin, setIsLogin] = useState(true);
