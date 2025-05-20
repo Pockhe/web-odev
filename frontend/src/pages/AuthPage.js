@@ -19,7 +19,7 @@ const AuthPage = ({ onClose, onLogin }) => {
     setLoading(true);
     try {
       if (isLogin) {
-        const res = await fetch(`${API_URL}/login`, {
+        const res = await fetch(`${API_URL}/users/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: form.email, password: form.password })
@@ -28,7 +28,7 @@ const AuthPage = ({ onClose, onLogin }) => {
         if (!res.ok) throw new Error(data.error || 'Giriş hatası');
         onLogin(data);
       } else {
-        const res = await fetch(`${API_URL}/register`, {
+        const res = await fetch(`${API_URL}/users/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form)
