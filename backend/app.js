@@ -15,7 +15,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 // MongoDB bağlantısı
@@ -29,6 +28,8 @@ mongoose.connect('mongodb+srv://udry0816:MI8cCvvIpDeE82Wr@cluster0.nniym4y.mongo
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/servis-api', servisRouter);
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
 
